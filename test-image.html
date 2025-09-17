@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8">
+<title>Test image</title>
+<style>body{font-family:system-ui;margin:20px} .ok{color:#0a0}.ko{color:#c00} img{max-width:260px;display:block;margin:8px 0;border-radius:8px}</style>
+<h1>Test image</h1>
+<p>Ouvre ce lien dans <b>Safari</b> pas avec Telegram</p>
+
+<details>
+<summary><b>📱 Instructions pour ouvrir dans Safari depuis Telegram</b></summary>
+<ol>
+<li><b>Dans Telegram</b> - Appuie <b>longuement</b> sur le lien (ne tape pas dessus)</li>
+<li><b>Menu contextuel</b> - Un menu va apparaître avec plusieurs options</li>
+<li><b>Copier le lien</b> - Sélectionne "Copier le lien" ou "Copy Link"</li>
+<li><b>Ouvrir Safari</b> - Ferme Telegram et ouvre l'app Safari</li>
+<li><b>Coller dans Safari</b> - Dans la barre d'adresse de Safari, <b>appuie longuement</b> et sélectionne "Coller"</li>
+<li><b>Valider</b> - Appuie sur "Aller" ou "Go" pour charger la page</li>
+</ol>
+<p><b>Alternative rapide :</b> Après avoir copié le lien, <b>appuie longuement sur l'icône Safari</b> et sélectionne "Coller et aller" si disponible.</p>
+</details>
+
+<div id="out"></div>
+<script>
+const url = "https://cdn.baobab54.com/cdn-cgi/image/format=auto,quality=85,width=480/mungete_thumbnail.webp";
+const img=new Image();
+img.onload=()=>{log('✅ Chargée',true);document.getElementById('out').appendChild(img);};
+img.onerror=()=>{log('❌ Échec de chargement');};
+img.src = url + "?t=" + Date.now(); // bust cache
+function log(t,ok){const d=document.createElement('div');d.className=ok?'ok':'ko';d.textContent=t;document.getElementById('out').appendChild(d);}
+</script>
